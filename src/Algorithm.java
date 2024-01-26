@@ -23,6 +23,14 @@ public class Algorithm {
 
     //Question 3
     public void notFib(int input){
+        if(input == 0){
+            System.out.println("0");
+            return;
+        }
+        if(input == 1){
+            System.out.println("0, 1");
+            return;
+        }
         Long[] a = new Long[input];
         a[0] = 0L;
         a[1] = 1L;
@@ -46,8 +54,7 @@ public class Algorithm {
             return 2;
         }
 
-        int pos = 0;
-        int i = 3;
+        int pos = 3;
         int term1 = 0;
         int term2 = 1;
         int next = 0;
@@ -58,15 +65,14 @@ public class Algorithm {
                 break;
             }
             if((input < next) && (input > term2)){
-                i--;
+                pos--;
                 break;
             }
             term1 = term2;
             term2 = next;
-            i++;
+            pos++;
         }
 
-        pos = i;
         return pos;
     }
 
